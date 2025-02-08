@@ -2,6 +2,10 @@ import { useState } from "react";
 import "./NavBar.css"; 
 import {NavLink} from "react-router-dom"
 import { useAuth } from "../store/auth";
+import { Login } from "../pages/Login";
+import { Contact } from "../pages/Contact";
+import { Register } from "../pages/Register";
+import { useState } from "react";
 export const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
   const {isLoggedin}=useAuth();
@@ -17,10 +21,12 @@ export const NavBar = () => {
                 <NavLink to="/logout">Logout</NavLink>
               </li>:<>
               <li>
-                <NavLink to="/register"> Register </NavLink>
+                <button onClick={()=>setModalreg(true)} >Register</button>
+                <Register isOpen={isModalreg} onClose={()=>setModalreg(false)}/>
               </li>
               <li>
-                <NavLink to="/login"> Login </NavLink>
+                <button onClick={()=>setIsModalOpen(true)}>Login</button>
+                <Login isOpen={isModalOpen} onClose={()=>setIsModalOpen(false)}/>
               </li>
               </>}
             </ul>

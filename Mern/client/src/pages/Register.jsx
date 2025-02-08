@@ -2,7 +2,7 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom"
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
-export const Register=()=>{
+export const Register=({isOpen,onClose})=>{
     const [user,setUser]=useState({
         username:"",
         email:"",
@@ -22,7 +22,7 @@ export const Register=()=>{
     }
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        alert("usr",user);
+        
         // console.log(user);
 
         try{
@@ -57,41 +57,82 @@ export const Register=()=>{
             console.log("register",error);
         }
     };
-    return(
-        <>
+    if (!isOpen) return null;
+    return (
+      <>
         <main>
-          <div className="section-registration">
-            <div className="container grid grid-two-cols">
-                <div className="registration-image">
-                    <img src="/images/register.png" alt="registration going on" width="300" height="300"/>
-                </div>
-                <div className="registration-form">
-                    <h1 className="main heading mb-3">registration form</h1>
-                    <br/>
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <label htmlFor="username">Name:</label>
-                            <input type="text" name="username" required placeholder="username" id="username" autoComplete="off" value={user.username} onChange={handleInput}/>
-                        </div>
-                        <div>
-                            <label htmlFor="email">Email:</label>
-                            <input type="email" name="email" required placeholder="email" id="email" autoComplete="off" value={user.email} onChange={handleInput}/>
-                        </div>
-                        <div>
-                            <label htmlFor="phone">Phone:</label>
-                            <input type="number" name="phone" required placeholder="phone" id="phone" autoComplete="off" value={user.phone} onChange={handleInput}/>
-                        </div>
-                        <div>
-                            <label htmlFor="password">Password:</label>
-                            <input type="password" name="password" required placeholder="password" id="password" autoComplete="off" value={user.password} onChange={handleInput}/>
-                        </div>
-                        <br/>
-                        <button type="submit" className="btn btn-submit"> Register Now</button>
-                    </form>
-                </div>
+          <div className="section-registration2" onClick={onClose}>
+            <div
+              className="container grid2 grid-two-cols"
+              onClick={(e) => e.stopPropagation()}>
+              <button className="close-btn" onClick={onClose}>
+                ✖
+              </button>
+              <div className="registration-form">
+                <h1 className="main heading mb-3">registration form</h1>
+                <br />
+                <form onSubmit={handleSubmit}>
+                  <div>
+                    <label htmlFor="username">Name:</label>
+                    <input
+                      type="text"
+                      name="username"
+                      required
+                      placeholder="username"
+                      id="username"
+                      autoComplete="off"
+                      value={user.username}
+                      onChange={handleInput}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email">Email:</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="email"
+                      id="email"
+                      autoComplete="off"
+                      value={user.email}
+                      onChange={handleInput}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone">Phone:</label>
+                    <input
+                      type="number"
+                      name="phone"
+                      required
+                      placeholder="phone"
+                      id="phone"
+                      autoComplete="off"
+                      value={user.phone}
+                      onChange={handleInput}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="password">Password:</label>
+                    <input
+                      type="password"
+                      name="password"
+                      required
+                      placeholder="password"
+                      id="password"
+                      autoComplete="off"
+                      value={user.password}
+                      onChange={handleInput}
+                    />
+                  </div>
+                  <br />
+                  <button type="submit" className="btn btn-submit">
+                    Register Now
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>  
+          </div>
         </main>
-        </>
-    )
+      </>
+    );
 }
