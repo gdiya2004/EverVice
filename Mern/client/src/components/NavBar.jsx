@@ -1,32 +1,19 @@
-import { NavLink } from "react-router-dom";
-import "./NavBar.css";
+import { useState } from "react";
+import "./NavBar.css"; 
+import {NavLink} from "react-router-dom"
 import { useAuth } from "../store/auth";
-
 export const NavBar = () => {
+    const [isOpen, setIsOpen] = useState(false);
   const {isLoggedin}=useAuth();
-  return (
-    <>
-      <header>
-        <div className="container">
-          <div className="logo-brand">
-            <NavLink to="/">DiyaTechnical</NavLink>
-          </div>
-
-          <nav>
-            <ul>
-              <li>
-                <NavLink to="/"> Home </NavLink>
-              </li>
-              <li>
-                <NavLink to="/about"> About </NavLink>
-              </li>
-              <li>
-                <NavLink to="/service"> Services </NavLink>
-              </li>
-              <li>
-                <NavLink to="/contact"> Contact </NavLink>
-              </li>
-              {isLoggedin?<li>
+    return (
+        <nav className="navbar">
+            <div className="logo">MyLogo</div>
+            <ul className={`nav-links ${isOpen ? "active" : ""}`}>
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="/about">About</NavLink></li>
+                <li><NavLink to="/service">Service</NavLink></li>
+                <li><NavLink to="/contact">Contact</NavLink></li>
+                {isLoggedin?<li>
                 <NavLink to="/logout">Logout</NavLink>
               </li>:<>
               <li>
@@ -37,9 +24,13 @@ export const NavBar = () => {
               </li>
               </>}
             </ul>
-          </nav>
-        </div>
-      </header>
-    </>
-  );
+
+            <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    );
 };
+

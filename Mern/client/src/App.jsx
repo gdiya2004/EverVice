@@ -9,7 +9,8 @@ import {NavBar} from "../src/components/NavBar"
 import {Error} from "../src/pages/Error"
 import {Footer} from "../src/components/Footer"
 import { Logout } from "./pages/Logout"
-
+import {slides} from "./data/carouselData.json"
+import { Carousel } from "./components/Carousel"
 export const App=()=>{
   return(
     <>

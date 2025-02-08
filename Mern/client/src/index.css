@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ensures the image covers the screen without distortion */
+}
+
+/* //about.jsx */
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-container h2 {
+    font-size: 1.8rem;
+    color: #ff9900;
+    margin-top: 20px;
+}

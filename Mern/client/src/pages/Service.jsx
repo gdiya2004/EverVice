@@ -1,6 +1,9 @@
 import { useAuth } from "../store/auth" 
 export const Service=()=>{
     const {services}=useAuth();
+    if (!Array.isArray(services)) {
+        return <p>Loading services...</p>;
+    }
     return(
         <section className="section-services">
             <div className="container">
