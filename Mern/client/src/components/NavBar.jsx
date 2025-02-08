@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import "./NavBar.css"; 
 import {NavLink} from "react-router-dom"
 import { useAuth } from "../store/auth";
@@ -8,35 +8,57 @@ import { Register } from "../pages/Register";
 import { useState } from "react";
 export const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isModalContact,setModalContact]=useState(false);
+    const [isModalreg,setModalreg]=useState(false);
+    const [isModalOpen,setIsModalOpen]=useState(false);
   const {isLoggedin}=useAuth();
     return (
-        <nav className="navbar">
-            <div className="logo">MyLogo</div>
-            <ul className={`nav-links ${isOpen ? "active" : ""}`}>
-                <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/about">About</NavLink></li>
-                <li><NavLink to="/service">Service</NavLink></li>
-                <li><NavLink to="/contact">Contact</NavLink></li>
-                {isLoggedin?<li>
-                <NavLink to="/logout">Logout</NavLink>
-              </li>:<>
+      <nav className="navbar">
+        <div className="logo">MyLogo</div>
+        <ul className={`nav-links ${isOpen ? "active" : ""}`}>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="/service">Service</NavLink>
+          </li>
+          <li>
+            <NavLink onClick={() => setModalContact(true)}>Contact</NavLink>
+            <Contact isOpen={isModalContact} onClose={() => setModalContact(false)} />
+          </li>
+          {isLoggedin ? (
+            <li>
+              <NavLink to="/logout">Logout</NavLink>
+            </li>
+          ) : (
+            <>
               <li>
-                <button onClick={()=>setModalreg(true)} >Register</button>
-                <Register isOpen={isModalreg} onClose={()=>setModalreg(false)}/>
+                <NavLink onClick={() => setModalreg(true)}>Register</NavLink>
+                <Register
+                  isOpen={isModalreg}
+                  onClose={() => setModalreg(false)}
+                />
               </li>
               <li>
-                <button onClick={()=>setIsModalOpen(true)}>Login</button>
-                <Login isOpen={isModalOpen} onClose={()=>setIsModalOpen(false)}/>
+                <NavLink onClick={() =>setIsModalOpen(true)}>Login</NavLink>
+                <Login
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                />
               </li>
-              </>}
-            </ul>
+            </>
+          )}
+        </ul>
 
-            <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+        <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
     );
 };
 
