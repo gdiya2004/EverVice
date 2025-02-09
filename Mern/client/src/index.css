@@ -118,3 +118,28 @@
     background-color: #5D3A1A;
     /* Darker brown for hover effect */
 }
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-container h2 {
+    font-size: 1.8rem;
+    color: #ff9900;
+    margin-top: 20px;
+}

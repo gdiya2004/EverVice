@@ -1,4 +1,3 @@
-
 import "./NavBar.css"; 
 import {NavLink} from "react-router-dom"
 import { useAuth } from "../store/auth";
@@ -12,7 +11,7 @@ export const NavBar = () => {
     const [isModalreg,setModalreg]=useState(false);
     const [isModalOpen,setIsModalOpen]=useState(false);
   const {isLoggedin}=useAuth();
-    return (
+    return ( 
       <nav className="navbar">
         <div className="logo">MyLogo</div>
         <ul className={`nav-links ${isOpen ? "active" : ""}`}>
@@ -61,4 +60,3 @@ export const NavBar = () => {
       </nav>
     );
 };
-
