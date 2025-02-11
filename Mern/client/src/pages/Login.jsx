@@ -2,6 +2,8 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom"
 import { useAuth } from "../store/auth";
 import {toast} from "react-toastify"
+import { SignInButton} from "@clerk/clerk-react";
+
 export const Login=({isOpen,onClose})=>{
    
     const [user,setUser]=useState({
@@ -99,6 +101,7 @@ export const Login=({isOpen,onClose})=>{
                   <button type="submit" className="btn btn-submit">
                     Login Now
                   </button>
+                  {/* <SignInButton/> */}
                 </form>
               </div>
             </div>
