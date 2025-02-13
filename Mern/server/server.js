@@ -2,7 +2,6 @@ import dotenv  from "dotenv"
 dotenv.config();
 // console.log(process.env.MONGODB_URI)
 import cors from "cors";
-
 import express from "express"
 import {router_} from "./router/auth-router.js"
 import {contactRoute} from "./router/contact-router.js"

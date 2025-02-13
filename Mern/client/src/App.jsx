@@ -11,6 +11,7 @@ import {Footer} from "../src/components/Footer"
 import { Logout } from "./pages/Logout"
 import {slides} from "./data/carouselData.json"
 import { Carousel } from "./components/Carousel"
+import SingleProduct from "./pages/singleProduct"
 export const App=()=>{
   return(
     <>
@@ -26,6 +27,7 @@ export const App=()=>{
     <Route path="/login" element={<Login/>}/>
     <Route path="*" element={<Error/>}/>
     <Route path="/logout" element={<Logout/>}/>
+    <Route path="/singleProduct/:id" element={<SingleProduct/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>
