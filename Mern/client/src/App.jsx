@@ -12,6 +12,9 @@ import { Logout } from "./pages/Logout"
 import { useEffect } from "react";
 
 
+import {slides} from "./data/carouselData.json"
+import { Carousel } from "./components/Carousel"
+import SingleProduct from "./pages/singleProduct"
 export const App=()=>{
   useEffect(() => {
     const script = document.createElement("script");
@@ -32,6 +35,7 @@ export const App=()=>{
     <Route path="/login" element={<Login/>}/>
     <Route path="*" element={<Error/>}/>
     <Route path="/logout" element={<Logout/>}/>
+    <Route path="/singleProduct/:id" element={<SingleProduct/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

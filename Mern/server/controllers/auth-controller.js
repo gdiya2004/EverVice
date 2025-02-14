@@ -47,7 +47,7 @@ export const login=async(req,res)=>{
         
         if(!userExist){
             // console.log("usrExist",userExist);
-            return res.status(400).json({msg:"Invalid Credentials diya"});
+            return res.status(400).json({msg:"Invalid Credentials"});
         }
         // const userP=await bcrypt.compare(password,userExist.password);
         const userP=await userExist.comparePassword(password);

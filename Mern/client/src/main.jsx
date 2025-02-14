@@ -14,6 +14,8 @@ createRoot(document.getElementById('root')).render(
  <AuthProvider>
   {/* <ClerkProvider publishableKey={publishableKey}> */}
     
+  {/* <ClerkProvider publishableKey={publishableKey}>
+     */}
           <ProductContextProvider>
           <FilterContextProvider>
         <App />
