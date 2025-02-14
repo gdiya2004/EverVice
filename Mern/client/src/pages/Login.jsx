@@ -2,7 +2,7 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom"
 import { useAuth } from "../store/auth";
 import {toast} from "react-toastify"
-import { SignInButton} from "@clerk/clerk-react";
+// import { SignInButton} from "@clerk/clerk-react";
 
 export const Login=({isOpen,onClose})=>{
    

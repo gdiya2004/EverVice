@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f8f6;
+    padding: 20px;
+}
+
+form {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    padding: 40px;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #a08f75;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.input-group div {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    position: relative;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid black;
+    padding: 8px 0;
+    font-size: 14px;
+    outline: none;
+    background: transparent;
+}
+
+input:focus, textarea:focus {
+    border-bottom: 2px solid black;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background: black;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-group div {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

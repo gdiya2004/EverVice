@@ -9,14 +9,20 @@ import {NavBar} from "../src/components/NavBar"
 import {Error} from "../src/pages/Error"
 import {Footer} from "../src/components/Footer"
 import { Logout } from "./pages/Logout"
-import {slides} from "./data/carouselData.json"
-import { Carousel } from "./components/Carousel"
+import { useEffect } from "react";
+
+
 export const App=()=>{
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "//code.tidio.co/YOUR_UNIQUE_TIDIO_CODE.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
   return(
     <>
     <BrowserRouter>
     <NavBar/>
-
     <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/about" element={<About/>}/>
