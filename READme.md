@@ -102,6 +102,8 @@ NEXT_PUBLIC_API_URL=https://your-backend.onrender.com
 ### Backend (Render)
 
 * Hosted on Render
+
+
 * Uses MongoDB Atlas
 * Auto-deployed from GitHub
 
