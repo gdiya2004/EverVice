@@ -6,8 +6,8 @@ EverVice is a full-stack service marketplace where users can discover and book s
 
 ## 🌐 Live Demo
 
-* 🔗 **Frontend (Live App):** https://your-frontend.vercel.app
-* 🔗 **Backend API:** https://your-backend.onrender.com
+* 🔗 **Frontend (Live App):** https://ever-vice-lsf5xfy1i-diya-guptas-projects-a3dbf531.vercel.app/dashboard
+* 🔗 **Backend API:** [https://your-backend.onrender.com](https://evervice-backend.onrender.com/)
 
 ---
 
