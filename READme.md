@@ -1,6 +1,13 @@
 # 🚀 EverVice – Service Marketplace Platform
 
-EverVice is a full-stack web application where users can discover and book services, vendors can offer their services, and admins manage the platform.
+EverVice is a full-stack service marketplace where users can discover and book services, vendors can offer services, and admins manage approvals and bookings.
+
+---
+
+## 🌐 Live Demo
+
+* 🔗 **Frontend (Live App):** https://your-frontend.vercel.app
+* 🔗 **Backend API:** https://your-backend.onrender.com
 
 ---
 
@@ -9,9 +16,9 @@ EverVice is a full-stack web application where users can discover and book servi
 ### 👤 User
 
 * Browse services with filters (location, category, price)
-* View service details
+* View detailed service pages
 * Contact vendors / make bookings
-* Authentication (Signup/Login)
+* Signup & Login authentication
 
 ---
 
@@ -29,7 +36,7 @@ EverVice is a full-stack web application where users can discover and book servi
 
 * Approve / reject vendor requests
 * View all bookings
-* Manage platform users indirectly
+* Manage platform workflow
 
 ---
 
@@ -47,23 +54,22 @@ EverVice is a full-stack web application where users can discover and book servi
 
 ### Database
 
-* MongoDB Atlas
-* Mongoose
+* MongoDB Atlas (Cloud Database)
 
 ### Authentication
 
 * JWT (JSON Web Token)
-* Password hashing (bcrypt)
+* bcrypt (password hashing)
 
 ---
 
 ## 📂 Folder Structure
 
-```
+```id="sk75yq"
 EverVice/
 │
-├── frontend/        # Next.js app
-├── backend/         # Express server
+├── evervice-frontend/     # Next.js frontend
+├── evervide-backend/      # Express backend
 │   ├── routes/
 │   ├── models/
 │   ├── middleware/
@@ -76,9 +82,8 @@ EverVice/
 
 ### Backend (.env)
 
-```
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
+```id="6d3o8x"
+MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_secret_key
 ```
 
@@ -86,60 +91,32 @@ JWT_SECRET=your_secret_key
 
 ### Frontend (.env.local)
 
-```
-NEXT_PUBLIC_API_URL=http://localhost:5000
-```
-
----
-
-## 🚀 Getting Started
-
-### 1️⃣ Clone the repo
-
-```
-git clone https://github.com/your-username/evervice.git
-cd evervice
+```id="mnaxqb"
+NEXT_PUBLIC_API_URL=https://your-backend.onrender.com
 ```
 
 ---
 
-### 2️⃣ Install dependencies
+## 🚀 Deployment
 
-#### Backend
+### Backend (Render)
 
-```
-cd backend
-npm install
-```
-
-#### Frontend
-
-```
-cd frontend
-npm install
-```
+* Hosted on Render
+* Uses MongoDB Atlas
+* Auto-deployed from GitHub
 
 ---
 
-### 3️⃣ Run the project
+### Frontend (Vercel)
 
-#### Start backend
-
-```
-npm run dev
-```
-
-#### Start frontend
-
-```
-npm run dev
-```
+* Hosted on Vercel
+* Connected to backend via environment variable
 
 ---
 
 ## 🔄 Application Flow
 
-```
+```id="vqj1sd"
 User Signup/Login
         ↓
 User requests vendor access
@@ -164,15 +141,7 @@ Bookings visible to Admin & Vendor
 * JWT-based authentication
 * Role-based access control (user / vendor / admin)
 * Protected backend routes
-* Secure password storage using bcrypt
-
----
-
-## 🌐 Deployment
-
-* Frontend: Vercel
-* Backend: Render / Railway
-* Database: MongoDB Atlas
+* Secure password hashing using bcrypt
 
 ---
 
@@ -182,7 +151,7 @@ Bookings visible to Admin & Vendor
 * Notifications system
 * Image upload for services
 * Payment integration
-* Ratings & reviews system
+* Ratings & reviews
 
 ---
 
@@ -194,10 +163,11 @@ Bookings visible to Admin & Vendor
 
 ## ⭐ Conclusion
 
-EverVice is a scalable service marketplace platform demonstrating:
+EverVice is a real-world full-stack project demonstrating:
 
-* Full-stack development
-* Authentication & authorization
-* Real-world workflow (admin approval system)
+* Authentication & Authorization
+* Role-based access (Admin / Vendor / User)
+* Booking & service marketplace workflow
+* Deployment-ready architecture
 
 ---
