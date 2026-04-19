@@ -188,7 +188,7 @@ Bookings visible to Admin & Vendor
 
 ## 👨‍💻 Author
 
-**Your Name**
+Diya Gupta
 
 ---
 
