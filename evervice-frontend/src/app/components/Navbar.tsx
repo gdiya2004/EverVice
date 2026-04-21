@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-md p-4 flex justify-between items-center">
-      <h1 className="text-xl font-bold text-black">EverVice</h1>
+      <h1 className="text-xl font-bold text-black">ServEase</h1>
 
       <div className="flex items-center gap-4">
 

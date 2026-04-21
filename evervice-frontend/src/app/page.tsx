@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-
+      
       <div className="min-h-screen bg-gray-100 flex justify-center">
         <div className="w-full max-w-5xl p-6">
 
