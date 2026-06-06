@@ -1,6 +1,6 @@
 # 🚀 ServEase – Service Marketplace Platform
 
-EverVice is a full-stack service marketplace where users can discover and book services, vendors can offer services, and admins manage approvals and bookings.
+ServEase is a full-stack service marketplace where users can discover and book services, vendors can offer services, and admins manage approvals and bookings.
 
 ---
 
